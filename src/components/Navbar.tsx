@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,18 +18,33 @@ const Navbar = () => {
   }, []);
 
   const navItems = [
-    { label: "Accueil", href: "#accueil" },
-    { label: "Cours", href: "#cours" },
-    { label: "Coach", href: "#coach" },
-    { label: "Galerie", href: "#galerie" },
-    { label: "Contact", href: "#contact" },
+    { label: "Accueil", href: "/", isRoute: true },
+    { label: "À Propos", href: "#apropos", isRoute: false },
+    { label: "Coach", href: "#coach", isRoute: false },
+    { label: "Galerie", href: "#galerie", isRoute: false },
+    { label: "Photos/Vidéos", href: "/photos-videos", isRoute: true },
+    { label: "Contact", href: "/contact", isRoute: true },
   ];
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsMobileMenuOpen(false);
+  const handleNavClick = (href: string, isRoute: boolean) => {
+    setIsMobileMenuOpen(false);
+    if (isRoute) {
+      navigate(href);
+    } else {
+      if (location.pathname !== "/") {
+        navigate("/");
+        setTimeout(() => {
+          const element = document.querySelector(href);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 100);
+      } else {
+        const element = document.querySelector(href);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }
     }
   };
 
@@ -39,16 +57,19 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#accueil" className="font-heading text-3xl font-bold text-primary">
+          <button
+            onClick={() => navigate("/")}
+            className="font-heading text-3xl font-bold text-primary"
+          >
             RTB
-          </a>
+          </button>
 
           {/* Desktop Navigation */}
           <ul className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
               <li key={item.label}>
                 <button
-                  onClick={() => scrollToSection(item.href)}
+                  onClick={() => handleNavClick(item.href, item.isRoute)}
                   className="text-foreground hover:text-primary transition-colors font-medium"
                 >
                   {item.label}
@@ -75,7 +96,7 @@ const Navbar = () => {
               {navItems.map((item) => (
                 <li key={item.label}>
                   <button
-                    onClick={() => scrollToSection(item.href)}
+                    onClick={() => handleNavClick(item.href, item.isRoute)}
                     className="text-foreground hover:text-primary transition-colors font-medium w-full text-left py-2"
                   >
                     {item.label}
