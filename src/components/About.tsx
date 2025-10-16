@@ -9,7 +9,7 @@ const About = () => {
           <div className="animate-fade-in-left">
             <img
               src={aboutImage}
-              alt="Royal Thai Boxing Club"
+              alt="Royal Thai Club"
               className="rounded-lg shadow-2xl w-full h-[500px] object-cover"
             />
           </div>
@@ -17,7 +17,7 @@ const About = () => {
           {/* Text Content */}
           <div className="animate-fade-in-right">
             <h2 className="font-heading text-5xl md:text-6xl text-primary mb-6">
-              ROYAL THAI BOXING
+              ROYAL THAI
             </h2>
             <div className="w-20 h-1 bg-secondary mb-6"></div>
             <p className="text-foreground text-lg leading-relaxed mb-6">

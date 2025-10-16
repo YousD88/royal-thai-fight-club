@@ -36,9 +36,6 @@ const Hero = () => {
           <h1 className="font-heading text-7xl md:text-9xl text-primary mb-4 drop-shadow-2xl">
             ROYAL THAI
           </h1>
-          <h2 className="font-heading text-5xl md:text-7xl text-secondary">
-            BOXING
-          </h2>
         </div>
 
         {/* Rotating Text */}

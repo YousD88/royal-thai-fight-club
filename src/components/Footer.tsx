@@ -4,7 +4,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="text-center">
           <p className="text-muted-foreground mb-2">
-            &copy; 2025 Royal Thai Boxing Neufchâteau - Tous droits réservés
+            &copy; 2025 Royal Thai Neufchâteau - Tous droits réservés
           </p>
           <div className="flex justify-center gap-6 text-sm">
             <a href="#" className="text-muted-foreground hover:text-primary transition-colors">

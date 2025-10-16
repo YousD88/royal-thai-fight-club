@@ -27,7 +27,7 @@ const Location = () => {
             <div className="animate-fade-in">
               <h3 className="font-heading text-2xl text-secondary mb-2">ADRESSE</h3>
               <p className="text-foreground">
-                Royal Thai Boxing<br />
+                Royal Thai<br />
                 Neufchâteau, France
               </p>
             </div>

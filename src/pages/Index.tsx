@@ -5,6 +5,7 @@ import Coach from "@/components/Coach";
 import Gallery from "@/components/Gallery";
 import Location from "@/components/Location";
 import SocialBar from "@/components/SocialBar";
+import Schedule from "@/components/Schedule";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -17,6 +18,7 @@ const Index = () => {
       <Gallery />
       <Location />
       <SocialBar />
+      <Schedule />
       <Footer />
     </div>
   );
