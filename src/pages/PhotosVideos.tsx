@@ -13,14 +13,7 @@ const PhotosVideos = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState("");
 
-  const photos = [
-    { src: im2, alt: "Entraînement 1" },
-    { src: im4, alt: "Entraînement 2" },
-    { src: image1, alt: "Entraînement 3" },
-    { src: im3, alt: "Entraînement 4" },
-    { src: im5, alt: "Entraînement 5" },
-  ];
-
+  
   const openLightbox = (src: string) => {
     setSelectedImage(src);
     setLightboxOpen(true);
