@@ -8,6 +8,7 @@ const Footer = () => {
           </p>
           <div className="flex justify-center gap-6 text-sm">
             <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              &copy; 2025 Royal Thai Neufchâteau - Tous droits réservés
               Mentions légales
             </a>
             <span className="text-muted-foreground">|</span>
